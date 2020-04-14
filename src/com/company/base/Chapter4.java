@@ -1,5 +1,7 @@
 package com.company.base;
 
+import com.company.base.src.Employee;
+
 import java.time.LocalDate;
 
 /**
@@ -10,11 +12,27 @@ public class Chapter4 {
 
 
     public static void main(String[] args) {
-        printCalender();
+//        printCalender();
+        employeeTest();
 
-        System.out.println();
-        System.out.println();
     }
+
+    /**
+     * 测试Employee
+     */
+    private static void employeeTest(){
+        Employee[] employees = new Employee[2];
+        employees[0] = new Employee("jack", 10000D, LocalDate.of(2020, 7, 3));
+        employees[1] = new Employee("john", 12000D, LocalDate.of(2020, 7, 4));
+
+        for (Employee e : employees){
+            e.raiseSalary(5D);
+
+            System.out.println("name:"+e.getName() + ",salary:"+e.getSalary() + ",hireDay:"+e.getHireDay().toString());
+        }
+
+    }
+
 
     /**
      * 打印日历
