@@ -1,6 +1,7 @@
 package com.company.base.src;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -21,6 +22,11 @@ public class Employee {
      * 入职日期
      */
     private LocalDate hireDay;
+
+    /**
+     * 年龄
+     */
+    private int age = 18;
 
     /**
      * 构造函数，new后被自动执行
@@ -69,14 +75,24 @@ public class Employee {
         return salary;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public Employee build(){
+        return new Employee("john", 30D, LocalDate.now());
+    }
+
     /**
      * 注意：如果返回了引用类型的对象，并且该类型有更改器方法，那么就存在对象内部变量被外部修改的风险
      * 例如： Date 类型，有setTime()
-     * 解决方案，返回时  clone 返回副本
+     * 解决方案1，返回时  clone 返回副本
+     * 方案2，使用没有更改器的 LocalDate
      * @return
      */
     public LocalDate getHireDay() {
         return hireDay;
+//        return (Date) hireDay.clone();
     }
 }
 
