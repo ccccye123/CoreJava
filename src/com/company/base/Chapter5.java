@@ -4,7 +4,9 @@ import com.company.base.src.Employee;
 import com.company.base.src.Manage;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 第五章
@@ -12,20 +14,32 @@ import java.util.Date;
  */
 public class Chapter5 {
     public static void main(String[] args) {
+        // 5.4 对象包装和装箱
+        // 每一种基本类型都有对应的包装类，比如  int : Integer
+        // List<int> list = new ArrayList<int>();  // List不允许使用基本类型
+        List<Integer> list = new ArrayList<>();
+//        Integer.valueOf()
 
+        // 自动装箱
+        list.add(1);  // 这个现象称为自动装箱，相当于   list.add(Integer.valueOf(1))
+        // 自动拆箱
+        int abc = list.get(0);  // 相当于 list.get(0).intValue();
+
+        // 5.5 可变参数
+        //multiArgs("jack", "lll", "222", "asdasdas");
 
         // 5.6枚举
-        Size s = Size.valueOf("Small");
-        Size m = Size.Small;
-
-        System.out.println(m.equals(Size.Small));
-        System.out.println(m == Size.Small);
-
-        System.out.println(Size.Small.toString() + ":" + System.identityHashCode(Size.Small));
-        System.out.println(s.toString() + ":" + System.identityHashCode(s));
-        System.out.println(Size.MEDIUM.toString() + ":" + System.identityHashCode(Size.MEDIUM));
-        System.out.println(Size.LARGE.toString() + ":" + System.identityHashCode(Size.LARGE));
-        System.out.println(Size.EXTRA_LARGE.toString() + ":" + System.identityHashCode(Size.EXTRA_LARGE));
+//        Size s = Size.valueOf("Small");
+//        Size m = Size.Small;
+//
+//        System.out.println(m.equals(Size.Small));
+//        System.out.println(m == Size.Small);
+//
+//        System.out.println(Size.Small.toString() + ":" + System.identityHashCode(Size.Small));
+//        System.out.println(s.toString() + ":" + System.identityHashCode(s));
+//        System.out.println(Size.MEDIUM.toString() + ":" + System.identityHashCode(Size.MEDIUM));
+//        System.out.println(Size.LARGE.toString() + ":" + System.identityHashCode(Size.LARGE));
+//        System.out.println(Size.EXTRA_LARGE.toString() + ":" + System.identityHashCode(Size.EXTRA_LARGE));
 
 //        Integer a = 100;
 //        Integer b = 1000;
@@ -65,5 +79,18 @@ public class Chapter5 {
         MEDIUM,
         LARGE,
         EXTRA_LARGE
+    }
+
+    /**
+     * 可变参数
+     *
+     * @param person
+     * @param args 只能是最后一个参数
+     */
+    private static void multiArgs(String person, Object... args){
+        System.out.println("hi "+person);
+        for (Object o : args){
+            System.out.println(o);
+        }
     }
 }
