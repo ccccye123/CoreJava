@@ -14,16 +14,33 @@ import java.util.List;
  */
 public class Chapter5 {
     public static void main(String[] args) {
+        // 5.2 所有类的超类
+        // Object是所有类的超类
+        // Object 的主要方法  equals、hashcode、toString
+        Object obj1 = new Object();
+        Object obj2 = obj1;
+        boolean b = obj1.equals(obj2); //默认equals方法是判断obj1和obj2所引用的对象是否为同一个，通常要重写equals通过子类的值来判断是否相等
+        System.out.println(b);
+
+        Employee employee = new Employee("jack", 10000D, LocalDate.now());
+        Employee employee2 = new Employee("john", 10000D, LocalDate.now());
+        b = employee.equals(employee);
+        System.out.println(b);
+        b = employee.equals(employee2);
+        System.out.println(b);
+
+
+
         // 5.4 对象包装和装箱
         // 每一种基本类型都有对应的包装类，比如  int : Integer
         // List<int> list = new ArrayList<int>();  // List不允许使用基本类型
-        List<Integer> list = new ArrayList<>();
+//        List<Integer> list = new ArrayList<>();
 //        Integer.valueOf()
 
         // 自动装箱
-        list.add(1);  // 这个现象称为自动装箱，相当于   list.add(Integer.valueOf(1))
+//        list.add(1);  // 这个现象称为自动装箱，相当于   list.add(Integer.valueOf(1))
         // 自动拆箱
-        int abc = list.get(0);  // 相当于 list.get(0).intValue();
+//        int abc = list.get(0);  // 相当于 list.get(0).intValue();
 
         // 5.5 可变参数
         //multiArgs("jack", "lll", "222", "asdasdas");
