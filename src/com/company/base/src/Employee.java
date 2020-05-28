@@ -9,7 +9,7 @@ import java.util.Objects;
  *
  * 源文件名应该和public的类名一致
  */
-public class Employee {
+public class Employee implements Comparable<Employee> {
     /**
      * 名字
      */
@@ -128,6 +128,21 @@ public class Employee {
     public LocalDate getHireDay() {
         return hireDay;
 //        return (Date) hireDay.clone();
+    }
+
+    /**
+     * 比较
+     * @param o
+     * @return
+     */
+    @Override
+    public int compareTo(Employee o) {
+        return Double.compare(this.salary, o.salary);
+    }
+
+    public int say(){
+        System.out.println("这是Employee的方法");
+        return 1;
     }
 }
 

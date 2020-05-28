@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * Java不支持多继承，因此只能extend一个父类
  */
-public class Manage extends Employee {
+public class Manage extends Employee implements MyInterface{
 
     /**
      * 构造函数
@@ -62,4 +62,10 @@ public class Manage extends Employee {
     }
 
 
+    public static void main(String[] args) {
+        Manage manage = new Manage("jack", 17000D, LocalDate.now());
+
+        // 父类和接口都有say方法，java按照父类有限原则自动使用父类实现
+        manage.say();
+    }
 }
