@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class EmployeeSortTest {
 
@@ -20,7 +21,12 @@ public class EmployeeSortTest {
         employees[1] = employee2;
         employees[2] = employee3;
 
-        Arrays.sort(employees);
+//        Arrays.sort(employees);
+
+        // 比较器+lambda表达式
+//        Comparator<Employee> comparator = (e1, e2) -> (int) (e1.getSalary() - e2.getSalary());
+//        Arrays.sort(employees, comparator);
+        Arrays.sort(employees, (e1, e2)->Double.compare(e1.getSalary(), e2.getSalary()));
 
 
 

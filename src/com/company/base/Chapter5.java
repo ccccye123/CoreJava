@@ -62,11 +62,12 @@ public class Chapter5 {
 //        System.out.println(Size.LARGE.toString() + ":" + System.identityHashCode(Size.LARGE));
 //        System.out.println(Size.EXTRA_LARGE.toString() + ":" + System.identityHashCode(Size.EXTRA_LARGE));
 
-//        Integer a = 100;
-//        Integer b = 1000;
-//        Integer c = 100;
-//        Integer d = 1000;
-//        b == d  false  这里返回的是false
+        Integer a = 100;
+        Integer b = 1000;
+        Integer c = 100;
+        Integer d = 1000;
+        // if (!(b == d))
+        // System.out.println((b == d)); //  false  这里返回的是false
 
 
 
