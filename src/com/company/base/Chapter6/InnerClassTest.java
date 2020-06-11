@@ -57,6 +57,12 @@ public class InnerClassTest {
 
 
     public class PrintTimer implements ActionListener {
+        private int age;
+
+        public PrintTimer(int age) {
+            this.age = age;
+        }
+
         @Override
         public void actionPerformed(ActionEvent e) {
 

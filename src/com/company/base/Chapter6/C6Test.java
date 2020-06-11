@@ -12,7 +12,7 @@ import java.util.function.Predicate;
 public class C6Test {
     public static void main(String[] args) throws IOException {
         InnerClassTest inner = new InnerClassTest(100, true);
-        ActionListener a = inner.new PrintTimer(); // 创建public的内部类方法 1、创建外围类，2、 outer.new inner();
+        ActionListener a = inner.new PrintTimer(3); // 创建public的内部类方法 1、创建外围类，2、 outer.new inner();
 
 //        Predicate
         ArrayList<String> arrayList = new ArrayList<>();
