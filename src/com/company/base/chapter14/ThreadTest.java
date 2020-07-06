@@ -6,23 +6,28 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class ThreadTest {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        Runnable target = ()-> {
-            System.out.println("hello");
-        };
-        Thread th1 = new Thread(target);
+//        Runnable target = ()-> {
+//            System.out.println("hello");
+//        };
+//        Thread th1 = new Thread(target);
+//
+//        // 为th1线程安装处理器
+//        th1.setUncaughtExceptionHandler((t,e)->{
+//            System.out.println("未捕获的异常处理器");
+//        });
+//
+//        // 为所有线程安装默认的处理器
+//        Thread.setDefaultUncaughtExceptionHandler((t,e)->{
+//            System.out.println("未捕获的异常处理器");
+//        });
+//
+////        th1.getThreadGroup().uncaughtException();
+//        th1.start();
 
-        // 为th1线程安装处理器
-        th1.setUncaughtExceptionHandler((t,e)->{
-            System.out.println("未捕获的异常处理器");
-        });
-
-        // 为所有线程安装默认的处理器
-        Thread.setDefaultUncaughtExceptionHandler((t,e)->{
-            System.out.println("未捕获的异常处理器");
-        });
-
-//        th1.getThreadGroup().uncaughtException();
-        th1.start();
+        // 可重入锁
+        LockTest lockTest = new LockTest();
+        lockTest.lock1();
+        lockTest.lock2();
 
 //        // 创建手动锁
 //        Lock lock = new ReentrantLock();
