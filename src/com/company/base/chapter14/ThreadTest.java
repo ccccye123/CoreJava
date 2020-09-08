@@ -25,9 +25,9 @@ public class ThreadTest {
 //        th1.start();
 
         // 可重入锁
-        LockTest lockTest = new LockTest();
-        lockTest.lock1();
-        lockTest.lock2();
+//        LockTest lockTest = new LockTest();
+//        lockTest.lock1();
+//        lockTest.lock2();
 
 //        // 创建手动锁
 //        Lock lock = new ReentrantLock();
@@ -109,10 +109,8 @@ public class ThreadTest {
 //        CallableThread call = new CallableThread();
 //        FutureTask<Integer> ft = new FutureTask<>(call);
 //
-//        System.out.println("a");
 //        Thread th = new Thread(ft);
 //        th.start();
-//        System.out.println("b");
 //        System.out.println(ft.get());  // 如果线程没有返回将阻塞
 //
 //        Thread.sleep(100);
