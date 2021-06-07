@@ -9,6 +9,8 @@ public class CollectionTest {
 
         // ArrayList特点是查询快，增删慢，可随机访问
         List<String> arrayList = new ArrayList();
+        ArrayList a = new ArrayList();
+
         funList(arrayList, "ArrayList");
 
         System.out.println("");
