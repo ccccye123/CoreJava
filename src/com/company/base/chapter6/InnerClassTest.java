@@ -1,4 +1,4 @@
-package com.company.base.Chapter6;
+package com.company.base.chapter6;
 
 import javax.swing.*;
 import java.awt.*;

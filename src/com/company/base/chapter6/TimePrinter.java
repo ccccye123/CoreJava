@@ -1,4 +1,4 @@
-package com.company.base.Chapter6;
+package com.company.base.chapter6;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
