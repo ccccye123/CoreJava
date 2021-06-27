@@ -69,20 +69,22 @@ public class ThreadTest {
 //            }
 //        });
 //
-//        // 3 创建定长，可周期性任务执行
-//        ScheduledExecutorService scheduledExecutorService= Executors.newScheduledThreadPool(2);
-//        scheduledExecutorService.schedule(new Runnable() {
-//            @Override
-//            public void run() {
-//                System.out.println("delay 3 seconds");
-//            }
-//        }, 3, TimeUnit.SECONDS);
-//        scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
-//            @Override
-//            public void run() {
-//                System.out.println("周期性线程池"+Thread.currentThread().getId());
-//            }
-//        }, 1, 3, TimeUnit.SECONDS);
+        // 3 创建定长，可周期性任务执行
+        ScheduledExecutorService scheduledExecutorService= Executors.newScheduledThreadPool(2);
+        scheduledExecutorService.schedule(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("delay 3 seconds");
+            }
+        }, 3, TimeUnit.SECONDS);
+        scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+            private long nextCycleTime = System.currentTimeMillis();
+            @Override
+            public void run() {
+                System.out.println("nextCycleTime:"+nextCycleTime);
+                System.out.println("周期性线程池"+Thread.currentThread().getId());
+            }
+        }, 1, 3, TimeUnit.SECONDS);
 //
 //        // 4 创建单线程的线程池， 只有1个线程，任务队列可以指定  FIFO  LIFO
 //        ExecutorService singleThreadService = Executors.newSingleThreadExecutor();
