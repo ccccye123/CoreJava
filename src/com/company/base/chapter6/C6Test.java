@@ -1,12 +1,10 @@
-package com.company.base.Chapter6;
+package com.company.base.chapter6;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
-import java.io.Console;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.function.Predicate;
 
 
 public class C6Test {
